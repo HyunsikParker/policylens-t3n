@@ -8,6 +8,7 @@ PolicyLens — a minimum-authority T3N procurement policy agent that rejects PII
 
 - Source: https://github.com/HyunsikParker/policylens-t3n
 - Demo: https://hyunsikparker.github.io/policylens-t3n/
+- Public submission document: https://docs.google.com/document/d/1S0gOOoByEzVA0h1LIM7_5tNhnDqqq7cjDyaYIQnw0-w/edit?usp=sharing
 - Architecture: https://github.com/HyunsikParker/policylens-t3n/blob/main/ARCHITECTURE.md
 - Runbook and handover: https://github.com/HyunsikParker/policylens-t3n/blob/main/RUNBOOK.md
 - Reproducible T3N findings: https://github.com/HyunsikParker/policylens-t3n/blob/main/docs/BUGS.md

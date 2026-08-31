@@ -20,6 +20,8 @@ The contract, two private maps, organization agent, and exact three-function gra
 
 Credential-free live evidence is in [`docs/evidence/live-verification.json`](docs/evidence/live-verification.json). Raw DIDs, API keys, and receipts are intentionally excluded from Git.
 
+The public judging brief is available as a [view-only Google Doc](https://docs.google.com/document/d/1S0gOOoByEzVA0h1LIM7_5tNhnDqqq7cjDyaYIQnw0-w/edit?usp=sharing).
+
 ## Why this agent is narrow
 
 Procurement assistants are dangerous when they accept unbounded documents or can act on payment systems. PolicyLens accepts only eight structured fields. Names, email addresses, bank data, tax identifiers, credentials, attachments, and arbitrary text are rejected before transport. The contract cannot call the network. High-value or sensitive requests stop at `human_review`; the agent never purchases anything.

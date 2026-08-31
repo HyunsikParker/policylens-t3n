@@ -1,0 +1,53 @@
+{
+  "observed_at": "2026-08-31",
+  "network": "T3N Sandbox",
+  "credentials_or_identifiers_included": false,
+  "trust": {
+    "signed_manifest_verified": true,
+    "unsafe_trust_fallback": false,
+    "sdk_version": "5.2.0",
+    "did_continuity_verified_privately": true
+  },
+  "deployment": {
+    "contract": "policy-lens",
+    "version": "0.1.0",
+    "status": "active",
+    "private_maps": 2,
+    "private_card_agent_created": true,
+    "grant_functions": [
+      "evaluate-request",
+      "get-decision",
+      "health"
+    ],
+    "allowed_hosts": [],
+    "wasm_bytes": 191635,
+    "wasm_sha256": "a42c02e75aef1997de969d58e62686ed44b0489f33e2cd57f5da63742eaead8f"
+  },
+  "live_acceptance": {
+    "health": "ok",
+    "storage": "tenant_private_kv",
+    "outbound_network": false,
+    "approve": true,
+    "idempotent_replay": true,
+    "changed_payload_collision_rejected": true,
+    "deny": true,
+    "pii_rejected_before_transport": true,
+    "held_out_human_review": true,
+    "stored_review_receipt_matched": true,
+    "new_decisions_during_receipt_recovery": 0,
+    "evidence_run_ids": [
+      "run-826a2641cc59f5645713bf89",
+      "run-37766b4976ecf9187418ec58",
+      "run-7b2e0875fda7c08950f2bdb2"
+    ]
+  },
+  "known_platform_boundary": {
+    "stateless_agent_key_authenticated": true,
+    "delegation_authorized": true,
+    "agent_available_credits": 0,
+    "protected_call_minimum_credits": 10000,
+    "stateless_invoke_result": "HTTP 403 InsufficientCredit",
+    "public_transfer_method_found": false,
+    "disclosure": "docs/BUGS.md"
+  }
+}

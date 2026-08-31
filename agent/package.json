@@ -1,0 +1,35 @@
+{
+  "name": "@policylens/agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "check": "npm run build && npm test",
+    "start": "tsx src/cli.ts",
+    "quickstart": "tsx scripts/quickstart.ts",
+    "verify:wasm": "tsx scripts/verify-wasm.ts",
+    "reconcile:contract": "tsx scripts/reconcile-contract.ts",
+    "provision": "tsx scripts/provision-agent.ts",
+    "setup:contract": "tsx scripts/setup-contract.ts",
+    "grant": "tsx scripts/grant-agent.ts",
+    "diagnose:grant": "tsx scripts/diagnose-grant.ts",
+    "probe:invoke": "tsx scripts/probe-invoke-route.ts",
+    "probe:session": "tsx scripts/session-health.ts",
+    "acceptance:live": "tsx scripts/live-acceptance.ts",
+    "acceptance:session": "tsx scripts/session-acceptance.ts",
+    "recover:receipt": "tsx scripts/recover-acceptance-receipt.ts"
+  },
+  "dependencies": {
+    "@terminal3/t3n-sdk": "5.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.0",
+    "tsx": "4.23.13",
+    "typescript": "7.0.2"
+  }
+}

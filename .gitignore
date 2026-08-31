@@ -1,0 +1,9 @@
+.DS_Store
+agent/node_modules/
+agent/dist/
+contract/target/
+ops/
+*.log
+.env
+.env.*
+!.env.example

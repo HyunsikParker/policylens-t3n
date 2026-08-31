@@ -1,0 +1,10 @@
+{
+  "request_id": "REQ-2026-0003",
+  "category": "gift_cards",
+  "amount_usd_cents": 50000,
+  "currency": "USD",
+  "vendor_country": "US",
+  "data_classification": "public",
+  "security_reviewed": true,
+  "business_purpose": "internal_operations"
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="PolicyLens: a minimum-authority T3N procurement policy agent." />
+    <title>PolicyLens — Confidential Procurement Control</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#main" aria-label="PolicyLens home">
+        <span class="brand-mark" aria-hidden="true">PL</span>
+        <span>PolicyLens</span>
+      </a>
+      <div class="environment"><span class="status-dot" aria-hidden="true"></span>T3N Sandbox</div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Confidential procurement control</p>
+          <h1 id="hero-title">A narrow agent that knows when to stop.</h1>
+          <p class="lede">PolicyLens evaluates structured purchasing requests inside a T3N TEE, persists redacted receipts, and routes sensitive decisions to a person.</p>
+        </div>
+        <dl class="proof-grid" aria-label="Verified build properties">
+          <div><dt>T3N host capabilities</dt><dd>3</dd></div>
+          <div><dt>Forbidden capabilities</dt><dd>0</dd></div>
+          <div><dt>Live T3N workflow</dt><dd>Verified</dd></div>
+          <div><dt>Contract tests</dt><dd>8 / 8</dd></div>
+        </dl>
+      </section>
+
+      <div class="notice" role="status">
+        <strong>Live deployment verified</strong>
+        <span>This UI evaluates frozen fixtures locally; the matching workflow and private receipts were verified on T3N Sandbox on August 31, 2026.</span>
+      </div>
+
+      <section class="workspace" aria-label="Policy decision preview">
+        <div class="panel request-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">01 / Request</p><h2>Bounded input</h2></div>
+            <span class="privacy-chip">No PII accepted</span>
+          </div>
+          <div class="fixture-tabs" role="tablist" aria-label="Request scenarios">
+            <button type="button" role="tab" data-fixture="approve" aria-selected="true">Routine</button>
+            <button type="button" role="tab" data-fixture="review" aria-selected="false">Sensitive</button>
+            <button type="button" role="tab" data-fixture="deny" aria-selected="false">Disallowed</button>
+          </div>
+          <dl id="request-fields" class="field-list" aria-live="polite"></dl>
+        </div>
+
+        <div class="decision-flow" aria-hidden="true"><span></span></div>
+
+        <div class="panel decision-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">02 / Contract</p><h2>Policy decision</h2></div>
+            <span class="version-chip">v0.1.0</span>
+          </div>
+          <div id="decision-state" class="decision-state">
+            <span class="decision-icon" aria-hidden="true"></span>
+            <p id="decision-label">Approve</p>
+          </div>
+          <div class="receipt">
+            <div><span>Policy</span><strong id="policy-version">2026-09-01</strong></div>
+            <div><span>Reason</span><strong id="reason-code">policy_checks_passed</strong></div>
+            <div><span>Fingerprint</span><code id="fingerprint">Calculating…</code></div>
+            <div><span>Evidence</span><strong>Local preview · live match</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="capabilities" aria-labelledby="capabilities-title">
+        <div class="section-heading">
+          <p class="eyebrow">Minimum authority</p>
+          <h2 id="capabilities-title">The contract can do three things—and cannot reach the network.</h2>
+        </div>
+        <div class="capability-grid">
+          <article><span>01</span><h3>Tenant context</h3><p>Bind each decision to the tenant, cluster time, and ledger sequence.</p></article>
+          <article><span>02</span><h3>Private KV</h3><p>Read the active policy and persist a redacted, idempotent audit receipt.</p></article>
+          <article><span>03</span><h3>Redacted logging</h3><p>Record only the opaque request ID and final decision—not procurement contents.</p></article>
+          <article class="blocked"><span>Blocked</span><h3>No ambient power</h3><p>No HTTP, signing, user profile, secret store, attachments, or payment credentials.</p></article>
+        </div>
+      </section>
+
+      <section class="handover" aria-labelledby="handover-title">
+        <div><p class="eyebrow">Operational choice</p><h2 id="handover-title">Ready for full Terminal 3 handover.</h2></div>
+        <p>The repository includes deterministic tests, one-command verification, policy and receipt schemas, key-rotation boundaries, revocation steps, and a post-challenge runbook. Credentials remain outside Git and transfer only through a separate secure channel.</p>
+      </section>
+    </main>
+
+    <footer>
+      <span>PolicyLens · T3N Agent Build Challenge</span>
+      <a href="https://github.com/HyunsikParker/policylens-t3n" rel="noreferrer">Public source</a>
+    </footer>
+    <script src="app.js" defer></script>
+  </body>
+</html>

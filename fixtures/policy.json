@@ -1,0 +1,15 @@
+{
+  "version": "2026-09-01",
+  "max_auto_approve_usd_cents": 250000,
+  "allowed_categories": [
+    "cloud_services",
+    "office_supplies",
+    "professional_services",
+    "software"
+  ],
+  "blocked_countries": ["KP"],
+  "classifications_requiring_security_review": [
+    "confidential",
+    "restricted"
+  ]
+}

@@ -1,0 +1,30 @@
+/// PolicyLens imports only deterministic tenant context, logging, and private
+/// KV storage. It deliberately has no HTTP, signing, secret, or profile access.
+package z:policy-lens@0.1.0;
+
+world policy-lens {
+    import host:tenant/tenant-context@1.0.0;
+    import host:interfaces/logging@2.1.0;
+    import host:interfaces/kv-store@2.1.0;
+
+    export contracts;
+}
+
+interface contracts {
+    record generic-input {
+        input: option<list<u8>>,
+        user-profile: option<list<u8>>,
+        context: option<list<u8>>,
+    }
+
+    /// Evaluate a strictly bounded procurement request and persist a redacted
+    /// decision receipt. Replaying the same request ID is idempotent; using the
+    /// same ID with a different payload is rejected.
+    evaluate-request: func(req: generic-input) -> result<list<u8>, string>;
+
+    /// Fetch one previously persisted receipt by opaque request ID.
+    get-decision: func(req: generic-input) -> result<list<u8>, string>;
+
+    /// Return contract version and declared capability boundary.
+    health: func(req: generic-input) -> result<list<u8>, string>;
+}

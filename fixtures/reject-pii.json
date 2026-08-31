@@ -1,0 +1,11 @@
+{
+  "request_id": "REQ-2026-0004",
+  "category": "software",
+  "amount_usd_cents": 125000,
+  "currency": "USD",
+  "vendor_country": "US",
+  "data_classification": "internal",
+  "security_reviewed": false,
+  "business_purpose": "internal_operations",
+  "requester_email": "must-not-enter-the-contract@example.invalid"
+}

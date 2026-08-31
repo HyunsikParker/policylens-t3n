@@ -1,0 +1,10 @@
+{
+  "request_id": "REQ-2026-0002",
+  "category": "cloud_services",
+  "amount_usd_cents": 480000,
+  "currency": "USD",
+  "vendor_country": "DE",
+  "data_classification": "confidential",
+  "security_reviewed": false,
+  "business_purpose": "customer_delivery"
+}

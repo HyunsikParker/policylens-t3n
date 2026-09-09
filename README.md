@@ -14,7 +14,7 @@ The contract, two private maps, organization agent, and exact three-function gra
 | T3N host capabilities | tenant context, private KV, redacted logging |
 | Forbidden T3N capabilities | 0 — no HTTP, signing, profile, or secret access |
 | Rust contract tests | 8 passed |
-| TypeScript tests | 9 passed |
+| TypeScript tests | 18 passed |
 | WASM component | 191,635 bytes, SHA-256 `a42c02e75aef1997de969d58e62686ed44b0489f33e2cd57f5da63742eaead8f` |
 | Live policy outcomes | approve, replay, collision rejection, deny, PII pre-transport rejection, human review, stored receipt match |
 
@@ -58,6 +58,14 @@ open http://127.0.0.1:4175
 ```
 
 The browser UI is an explicitly labelled local preview. Live execution evidence comes from the T3N sandbox receipt, not from the screen animation.
+
+Validate a request without credentials, network calls, or test credits:
+
+```bash
+npm start --prefix agent -- validate --file ../fixtures/approve.json
+```
+
+After configuring the paths and deployment identifiers in `.env.example`, run `npm start --prefix agent -- check-config`. It checks the mode-0600 agent key file and connection settings locally. A passing result does not prove authentication, funding, or authorization. The CLI reads `T3N_AGENT_API_KEY_FILE`; do not export the key itself.
 
 ## Operate on T3N Sandbox
 

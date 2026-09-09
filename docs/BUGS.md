@@ -24,6 +24,12 @@ The claim/provisioning flow should either fund a newly created agent enough to p
 
 The valid agent and minimum grant are retained, but the live acceptance uses the funded developer session against the same tenant contract. The agent-key 403 is not presented as a successful stateless invocation.
 
+### September 10 documentation check
+
+The [public-agent guide](https://docs.terminal3.io/developers/agents/register-agent) now directs builders to obtain a separate funded identity from the claim page for each agent. The [claim page FAQ](https://terminal3.io/products/agent-developer-kit) still says signup is limited to once per email. The [token guide](https://docs.terminal3.io/t3n/how-t3n-works/tokens) says credits are non-transferable. Those instructions do not establish a self-service funding path for the existing organization-owned agent. No additional signup was attempted, and the original deployment and credentials remain in place.
+
+The CLI now supports `check-config` and `validate --file` without network access, so maintainers can diagnose configuration and request errors before consuming credits. These checks do not resolve the agent funding limitation.
+
 ## 2. SDK 5.3.0 rejects the current sandbox signed manifest schema
 
 ### Reproduction

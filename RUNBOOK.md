@@ -16,6 +16,17 @@ Provisioning, contract setup, and grant scripts print only sanitized summaries. 
 
 ## Acceptance
 
+Start with the two local checks from the repository root:
+
+```bash
+npm start --prefix agent -- validate --file ../fixtures/approve.json
+npm start --prefix agent -- check-config
+```
+
+`validate` rejects undeclared fields and malformed requests without credentials. `check-config` reads the existing `T3N_AGENT_API_KEY_FILE`, requires mode 0600, and validates the node origin, contract ID, subject DID, version and timeout. Both make zero network calls and consume no credits. They do not authenticate or inspect a live balance or grant. Set configuration variables explicitly; the CLI does not load `.env` automatically.
+
+Once funding and grants are confirmed, use `npm start --prefix agent -- health`, `evaluate --file <request.json>`, or `get --request-id <id>`. These are metered calls. An invocation error is not retried automatically. The CLI reports fixed error messages so malformed input, credentials and server diagnostics do not appear in shared logs.
+
 Run local tests first. On a disposable tenant with fresh request IDs, call `health`, then approve, replay, changed-payload collision, deny, local PII rejection, held-out review, and stored-receipt readback. Measure balance before and after.
 
 The repository's fixed fixture IDs were consumed by the August 31, 2026 sandbox acceptance. Treat the retained public evidence as immutable; do not rerun those first-write assertions.
